@@ -70,14 +70,28 @@ main {
     border-style: solid; /* Looks like little dot now*/
 }
 
+/* Move the div content of timeline-event to right side if odd */
+.timeline-list li:nth-child(odd) div {
+    left: 45px;
+}
+
+/* Create triangles */
+/* How it works: https://stackoverflow.com/questions/7073484/how-do-css-triangles-work */
+.timeline-list li:nth-child(odd) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0; /* Make triangle pointing left */
+    border-color: transparent purple transparent transparent;
+}
+
+
 /* Move the div content of timeline-event to left side if even */
 .timeline-list li:nth-child(even) div {
     left: -430px;
 }
 
-/* Modifies the tiny dot*/
+/* Creates triangle */
 .timeline-list li:nth-child(even) div::before {
     right: -15px;
-    border-width: 8px 0 8px 16px;
+    border-width: 8px 0 8px 16px; /* Make triangle pointing right */
     border-color: transparent transparent transparent purple;
 }

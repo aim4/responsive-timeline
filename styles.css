@@ -1,0 +1,50 @@
+body {
+    /* Flexbox */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Other */
+    text-align: center;
+}
+
+header {
+    margin: 1em;
+    margin-bottom: 0em;
+}
+
+nav {
+    margin: 1em;
+}
+
+main {
+    position: relative;
+    margin: 1em;
+}
+
+.timeline-list {
+    list-style-type: none;
+    position: relative;
+
+    /* Creates vertica line by forcing list to be thin. jut outside of list */
+    width: 10px;
+    margin: 0 auto;
+    padding-top: 1em;
+    background: cyan;
+}
+
+.timeline-event {
+    text-align: left;
+    position: relative;
+    border: 2px solid black;
+    margin: 2em;
+    width: 400px;
+}
+
+.timeline-event::after {
+    content: '';
+    /* Move origin top-left of parent element (list item) instead of after the list item*/
+    position: absolute;
+    left: 50%; /* Move to center of list item */
+    bottom: 0; /* Move to bottom of list item */
+    background: black;
+}

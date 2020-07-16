@@ -21,30 +21,36 @@ main {
     margin: 1em;
 }
 
-.timeline-list {
-    list-style-type: none;
+.timeline-event {
+    list-style-type: none; /* Get rid of default list styling */
     position: relative;
 
-    /* Creates vertica line by forcing list to be thin. jut outside of list */
-    width: 10px;
-    margin: 0 auto;
+    /* Creates vertical line */
+    width: 10px; /* Make thin so it looks like a line */
+    margin: 0 auto; /* Make first element touch top of parent el and center it */
     padding-top: 1em;
     background: cyan;
 }
 
+/*
 .timeline-event {
     text-align: left;
     position: relative;
     border: 2px solid black;
     margin: 2em;
     width: 400px;
-}
+} */
 
+/* Comments explain what each css pair does to pseudo-element after the list item (LI/timeline-event) step-by-step */
 .timeline-event::after {
     content: '';
-    /* Move origin top-left of parent element (list item) instead of after the list item*/
+    /* Move origin top-left of 'parent element' (LI) instead of after the LI*/
     position: absolute;
-    left: 50%; /* Move to center of list item */
-    bottom: 0; /* Move to bottom of list item */
+    left: 50%; /* Moves and aligns left side of pseuo-el to center of LI*/
+    bottom: 0; /* Move to bottom of LI*/
+    transform: translateX(-50%); /* Makes center of pseudo-element the center of the LI */
+    width: 30px;
+    height: 30px; /* Becomes a 30x30px box */
+    border-radius: 50%; /* Makes circle */
     background: black;
 }

@@ -17,6 +17,7 @@ function createListItem(data, year) {
         return;
     }
 
+    data = 'potato\ntomato';
     const $year = $('<time>');
     $year.text(year);
 

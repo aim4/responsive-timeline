@@ -17,14 +17,18 @@ function createListItem(data, year) {
         return;
     }
 
+    // Create list item from the inside out
     data = 'potato\ntomato';
     const $year = $('<time>');
     $year.text(year);
 
+    const $div = $('<div>');
+    $div.text(data);
+
     const $listItem = $('<li>');
-    $listItem.text(data);
     $listItem.addClass('timeline-event');
 
-    $listItem.prepend($year);
+    $div.prepend($year);
+    $listItem.append($div);
     $timelineList.append($listItem);
 }

@@ -18,9 +18,8 @@ function createListItem(data, year) {
     }
 
     // Create list item from the inside out
-    data = 'potato\ntomato';
     const $year = $('<time>');
-    $year.text(year);
+    $year.text(year + ' ');
 
     const $div = $('<div>');
     $div.text(data);

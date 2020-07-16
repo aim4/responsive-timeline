@@ -30,7 +30,8 @@ main {
     /* Creates vertical line */
     width: 8px; /* Make thin so it looks like a line */
     margin: 0 auto; /* Make first element touch top of parent el and center it */
-    padding-top: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
     background: black;
 }
 
@@ -41,7 +42,7 @@ main {
     /* Move origin top-left of 'parent element' (LI) instead of after the LI*/
     position: absolute;
     left: 50%; /* Moves and aligns left side of pseuo-el to center of LI*/
-    bottom: 0; /* Move to bottom of LI*/
+    bottom: 2em; /* Move to bottom of LI*/
     transform: translateX(-50%); /* Makes center of pseudo-element the center of the LI */
     width: 30px;
     height: 30px; /* Becomes a 30x30px box */

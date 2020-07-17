@@ -24,11 +24,8 @@ header {
 }
 
 nav {
-    width: 100%;
-    padding: 1em;
-    padding-bottom: 10em;
-    background: white;
-    z-index: 10;
+    margin: 1em;
+    margin-bottom: 10em;
 }
 
 main {
@@ -153,20 +150,18 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     opacity: 1;
 }
 
-/* -- Vertical line stem -- */
+/* Vertical line stem */
 .stem-wrapper {
     text-align: center;
     position: fixed;
-    width: 30px;
     top: 0;
     bottom: 0;
     left: 50%;
-    /* border: 2px solid red; */
-    z-index: -1;
-    /* transform: translateX(0%); Align with line from list */
+    z-index: 5;
+    /* background: red; */
+    border: 2px solid red;
 }
 
 .visible-stem {
     height: 50%;
-    background: red;
 }

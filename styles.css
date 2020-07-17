@@ -24,6 +24,7 @@ main {
 /* Used tutorial from:
 https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-and-a-touch-of-javascript--cms-26528 */
 /* Uses each list element to create a vertical line */
+/* .timeline-list li { */
 .timeline-event {
     list-style-type: none; /* Get rid of default list styling */
     position: relative;
@@ -39,6 +40,7 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
 
 /* Create the circle markers on timeline */
 /* Comments explain what each css pair does to pseudo-element after the list item (LI/timeline-event) step-by-step */
+/* .timeline-list li::after { */
 .timeline-event::after {
     content: '';
     /* Move origin top-left of 'parent element' (LI) instead of after the LI*/
@@ -54,11 +56,13 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     transition: background 0.5s ease-in-out;
 }
 
+/* .timeline-list li.in-view::after { */
 .timeline-event.in-view::after {
     background: black;
 }
 
 /* Create the timeline-event text boxes */
+/* .timeline-list li div { */
 .timeline-event div {
     position: relative;
     /* Hide on load */
@@ -71,9 +75,11 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     border: 2px solid pink;
     background: pink;
     transition: all 0.5s ease-in-out;
+    /* transform: translate3d(0, 0, 0); */
 }
 
 /* Adds a pseudo-element right after opening tag of div inside the timeline-event */
+/* .timeline-list li div::before { */
 .timeline-event div::before {
     content: '';
     position: absolute; /* Move origin to top-left of div (inner div, does not include padding) */
@@ -111,7 +117,9 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     border-color: transparent transparent transparent pink;
 }
 
-.in-view div {
+.timeline-list li.in-view div {
+/* .timeline-event.in-view div { Even though selectors are same, more specific one gets applied last,
+    so the n-th child selector gets applied last and animation doesn't work right */
     transform: none;
     visibility: visible;
     opacity: 1;

@@ -1,7 +1,6 @@
 const $timelineList = $('.timeline-list:first');
-
+// TODO: make the timeline thing a mask for a color underneath that is revealed as you scroll
 function createListItem(data, year) {
-    console.log('data: ' + data);
     if (data.trim() === '') {
         return;
     }
@@ -52,6 +51,8 @@ $(document).ready(() => {
             year++;
         });
     }, 'text');
+
+    $(window).scroll();
 });
 
 // When DOM content loads, html loads, window is resized, or user scrolls,

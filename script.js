@@ -6,6 +6,7 @@ $(document).ready(() => {
         let year = 2000;
         lines.forEach((line) => {
             createListItem(line, year);
+            // TODO add function to reveal element when in view
             year++;
         });
     }, 'text');
@@ -21,13 +22,15 @@ function createListItem(data, year) {
     const $year = $('<time>');
     $year.text(year + ' ');
 
-    const $div = $('<div>');
-    $div.text(data);
+    // Hide all the event speech bubbles
+    const $eventBubble = $('<div>');
+    $eventBubble.text(data);
+    $eventBubble.css('visibility', 'hidden');
 
     const $listItem = $('<li>');
     $listItem.addClass('timeline-event');
 
-    $div.prepend($year);
-    $listItem.append($div);
+    $eventBubble.prepend($year);
+    $listItem.append($eventBubble);
     $timelineList.append($listItem);
 }

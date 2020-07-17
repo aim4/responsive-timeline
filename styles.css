@@ -49,18 +49,28 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     width: 30px;
     height: 30px; /* Becomes a 30x30px box */
     border-radius: 50%; /* Makes circle */
+    border: 2px solid black;
+    background: white;
+    transition: background 0.5s ease-in-out;
+}
+
+.timeline-event.in-view::after {
     background: black;
 }
 
 /* Create the timeline-event text boxes */
 .timeline-event div {
     position: relative;
+    /* Hide on load */
+    visibility: hidden;
+    opacity: 0;
     bottom: 0;
     /* No change? */
     width: 400px;
     padding: 1em; /* Ball stays aligned with bottom of div content */
     border: 2px solid pink;
     background: pink;
+    transition: all 0.5s ease-in-out;
 }
 
 /* Adds a pseudo-element right after opening tag of div inside the timeline-event */
@@ -76,6 +86,7 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
 /* Move the div content of timeline-event to right side if odd */
 .timeline-list li:nth-child(odd) div {
     left: 45px;
+    transform: translate3d(200px, 0, 0);
 }
 
 /* Create triangles */
@@ -90,6 +101,7 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
 /* Move the div content of timeline-event to left side if even */
 .timeline-list li:nth-child(even) div {
     left: -471px;
+    transform: translate3d(-200px, 0, 0);
 }
 
 /* Creates triangle */
@@ -97,4 +109,10 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     right: -15px;
     border-width: 8px 0 8px 16px; /* Make triangle pointing right */
     border-color: transparent transparent transparent pink;
+}
+
+.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
 }

@@ -13,7 +13,6 @@ function createListItem(data, year) {
     // Hide all the event speech bubbles
     const $eventBubble = $('<div>');
     $eventBubble.text(data);
-    $eventBubble.css('visibility', 'hidden');
 
     const $listItem = $('<li>');
     $listItem.addClass('timeline-event');

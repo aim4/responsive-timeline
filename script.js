@@ -34,3 +34,19 @@ function createListItem(data, year) {
     $listItem.append($eventBubble);
     $timelineList.append($listItem);
 }
+
+// Help from: https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport
+// See user Dan's answer for updated response
+function isElementInViewport(el) {
+    // Check if using jQuery, then check if el is a jQuery object
+    // If jQuery object, get the actual DOM element
+    if (typeof jQuery === 'function' && el instanceof jQuery) {
+        el = el[0];
+    }
+
+    // $(window) is the viewport
+    const rect = el.getBoundingClientRect();
+    const topLeftCornerInView = rect.top >= 0 && rect.left >= 0;
+    const bottomRightCornerInView = rect.bottom <= $(window).height() && rect.right <= $(window).width();
+    return topLeftCornerInView && bottomRightCornerInView;
+}

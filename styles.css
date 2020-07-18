@@ -58,16 +58,14 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     margin: 0 auto; /* Make first element touch top of parent el and center it */
     padding-top: 2em;
     padding-bottom: 2em;
-<<<<<<< HEAD
     border: 0px solid blue;
     border-left-width: 30px;
     border-right-width: 30px;
     /* background: blue; */
     /* clip-path: inset(0 0 0 0); */
-=======
     border: 2px solid black;
->>>>>>> 6c6255f... Implement crude scrolling color change
     background: transparent;
+    z-index: -10;
 }
 
 /* Create the circle markers on timeline */
@@ -161,7 +159,7 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
 .stem-wrapper {
     text-align: center;
     position: fixed;
-    /* width: 8px; */
+    width: 30px;
     top: 0;
     bottom: 0;
     left: 50%;

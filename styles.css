@@ -18,7 +18,9 @@ nav {
 
 main {
     position: relative;
+    width: 100%;
     margin: 1em;
+    z-index: 1;
 }
 
 /* Used tutorial from:
@@ -123,4 +125,18 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     transform: none;
     visibility: visible;
     opacity: 1;
+}
+
+.timeline-list {
+    z-index: 2;
+}
+
+.stem-wrapper{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    border: 2px solid darkorchid;
 }

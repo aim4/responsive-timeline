@@ -58,7 +58,11 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     margin: 0 auto; /* Make first element touch top of parent el and center it */
     padding-top: 2em;
     padding-bottom: 2em;
-    border: 2px solid black;
+    border: 0px solid blue;
+    border-left-width: 30px;
+    border-right-width: 30px;
+    /* background: blue; */
+    /* clip-path: inset(0 0 0 0); */
     background: transparent;
 }
 
@@ -75,14 +79,14 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     width: 30px;
     height: 30px; /* Becomes a 30x30px box */
     border-radius: 50%; /* Makes circle */
-    border: 2px solid black;
+    border: 2px solid white;
     background: white;
     transition: background 0.5s ease-in-out;
 }
 
 /* .timeline-list li.in-view::after { */
 .timeline-event.in-view::after {
-    background: black;
+    background: transparent;
 }
 
 /* Create the timeline-event text boxes */
@@ -153,7 +157,7 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
 .stem-wrapper {
     text-align: center;
     position: fixed;
-    /* width: 8px; */
+    width: 30px;
     top: 0;
     bottom: 0;
     left: 50%;

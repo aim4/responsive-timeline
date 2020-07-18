@@ -24,8 +24,11 @@ header {
 }
 
 nav {
-    margin: 1em;
-    margin-bottom: 10em;
+    width: 100%;
+    padding: 1em;
+    padding-bottom: 10em;
+    background: white;
+    z-index: 10;
 }
 
 main {
@@ -55,11 +58,15 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     margin: 0 auto; /* Make first element touch top of parent el and center it */
     padding-top: 2em;
     padding-bottom: 2em;
+<<<<<<< HEAD
     border: 0px solid blue;
     border-left-width: 30px;
     border-right-width: 30px;
     /* background: blue; */
     /* clip-path: inset(0 0 0 0); */
+=======
+    border: 2px solid black;
+>>>>>>> 6c6255f... Implement crude scrolling color change
     background: transparent;
 }
 
@@ -150,18 +157,20 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     opacity: 1;
 }
 
-/* Vertical line stem */
+/* -- Vertical line stem -- */
 .stem-wrapper {
     text-align: center;
     position: fixed;
+    /* width: 8px; */
     top: 0;
     bottom: 0;
     left: 50%;
-    z-index: 5;
-    /* background: red; */
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    z-index: -1;
+    /* transform: translateX(0%); Align with line from list */
 }
 
 .visible-stem {
     height: 50%;
+    background: red;
 }

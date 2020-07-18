@@ -8,12 +8,14 @@ body {
 }
 
 header {
-    margin: 1em;
-    margin-bottom: 0em;
+    width: 50%;
+    margin: 2em;
+    margin-bottom: 2em;
 }
 
 nav {
     margin: 1em;
+    margin-bottom: 2em;
 }
 
 main {
@@ -21,6 +23,11 @@ main {
     width: 100%;
     margin: 1em;
     z-index: 1;
+    background-color: hsla(326, 100%, 30%, 1);
+}
+
+footer {
+    height: 45em;
 }
 
 /* Used tutorial from:
@@ -131,12 +138,38 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     z-index: 2;
 }
 
-.stem-wrapper{
+.stem-wrapper {
+    width: 10px;
     height: 100%;
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 5;
+    /* border: 4px solid white; */
+    /* opacity: 1; */
+    /* background-color: hsla(90, 0%, 100%, 1); */
+}
+
+.visible-stem {
+    position: sticky;
+    top: 0;
+    height: 30vh;
+    /* top: 50vh; */
+    z-index: 2;
+    /* border: 2px solid red; */
+    background: hsla(326, 100%, 83%, 0.8);
+    opacity: 1.0;
+    /* position: fixed; */
+    /* height: 50%; */
+}
+
+.root {
+    position: sticky;
+    top: 30vh;
+    height: 70vh;
+    background: hsla(326, 100%, 83%, 0.4);
+    /* border: 2px solid darkblue; */
     z-index: 3;
-    border: 2px solid darkorchid;
+    opacity: 1;
 }

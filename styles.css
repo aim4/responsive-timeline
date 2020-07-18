@@ -1,4 +1,11 @@
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     /* Flexbox */
     display: flex;
     flex-direction: column;
@@ -8,13 +15,20 @@ body {
 }
 
 header {
-    margin: 1em;
-    margin-bottom: 0em;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    padding-bottom: 2em;
+    background: white;
+    z-index: 10;
 }
 
 nav {
-    margin: 1em;
-    margin-bottom: 10em;
+    width: 100%;
+    padding: 1em;
+    padding-bottom: 10em;
+    background: white;
+    z-index: 10;
 }
 
 main {
@@ -22,6 +36,14 @@ main {
     margin: 1em;
 }
 
+footer {
+    width: 100%;
+    padding: 1em;
+    background: white;
+    z-index: 10;
+}
+
+/* -- Timeline -- */
 /* Used tutorial from:
 https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-and-a-touch-of-javascript--cms-26528 */
 /* Uses each list element to create a vertical line */
@@ -36,7 +58,8 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     margin: 0 auto; /* Make first element touch top of parent el and center it */
     padding-top: 2em;
     padding-bottom: 2em;
-    background: black;
+    border: 2px solid black;
+    background: transparent;
 }
 
 /* Create the circle markers on timeline */
@@ -126,18 +149,20 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     opacity: 1;
 }
 
-/* Vertical line stem */
+/* -- Vertical line stem -- */
 .stem-wrapper {
     text-align: center;
     position: fixed;
+    /* width: 8px; */
     top: 0;
     bottom: 0;
     left: 50%;
-    z-index: 5;
-    /* background: red; */
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    z-index: -1;
+    /* transform: translateX(0%); Align with line from list */
 }
 
 .visible-stem {
     height: 50%;
+    background: red;
 }

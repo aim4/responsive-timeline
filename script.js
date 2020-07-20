@@ -1,7 +1,6 @@
 const $timelineList = $('.timeline-list:first');
 
 function createListItem(data, year) {
-    console.log('data: ' + data);
     if (data.trim() === '') {
         return;
     }
@@ -19,7 +18,8 @@ function createListItem(data, year) {
 
     $eventBubble.prepend($year);
     $listItem.append($eventBubble);
-    $timelineList.append($listItem);
+    return $listItem;
+    // $timelineList.append($listItem);
 }
 
 // Check if using jQuery, then check if el is a jQuery object
@@ -47,7 +47,12 @@ $(document).ready(() => {
         const lines = data.split('\n');
         let year = 2000;
         lines.forEach((line) => {
-            createListItem(line, year);
+            $listItem = createListItem(line, year);
+            if (!$listItem) {
+                return;
+            }
+            $timelineList.append($listItem);
+
             // TODO add function to reveal element when in view
             year++;
         });

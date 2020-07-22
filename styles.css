@@ -124,3 +124,35 @@ https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-a
     visibility: visible;
     opacity: 1;
 }
+
+/* Media queries */
+@media screen and (max-width: 900px) {
+    .timeline-event div {
+        width: 250px;
+    }
+
+    .timeline-list li:nth-child(even) div {
+        left: -325px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .timeline-event {
+        margin-left: 20px;
+    }
+
+    .timeline-event div {
+        /* width: 200px; */
+        width: calc(100vw - 350px);
+    }
+
+    .timeline-list li:nth-child(even) div {
+        left: 45px;
+    }
+
+    .timeline-list li:nth-child(even) div::before {
+        left: -15px;
+        border-width: 8px 16px 8px 0;
+        border-color: transparent pink transparent transparent;
+    }
+}
